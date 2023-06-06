@@ -3,14 +3,17 @@
 pipeline {
     agent {
         kubernetes {
-            label "kubeagent"
-            defaultContainer "jnlp"
+           # label "kubeagent"
+           # defaultContainer "jnlp"
             yaml libraryResource("resource/agents/jnlp.yaml")
         }
     }
     statges {
         stage ("build") {
-            sh echo "hellow"
+            steps {
+                sh echo "hellow"
+            }
+           
         }
     }
 }
