@@ -3,7 +3,7 @@
 pipeline {
    agent {
      //cloud 'kubernetes'
-     label 'kube-agent'
+     label 'pod-agent'
     }
   
 
