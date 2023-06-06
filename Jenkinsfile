@@ -2,11 +2,10 @@
 
 pipeline {
    agent {
-     kubernetes {
      //cloud 'kubernetes'
      label 'kube-agent'
-     }
-  }
+    }
+  
 
   stages {
     stage('Build') {
