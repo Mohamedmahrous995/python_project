@@ -1,4 +1,4 @@
-@Library('python_project_library') _
+//@Library('python_project_library') _
 
 pipeline {
   agent {
