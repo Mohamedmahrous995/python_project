@@ -1,24 +1,11 @@
 //@Library('python_project_library') _
 
 pipeline {
- agent {
-    kubernetes {
-        defaultContainer 'jnlp'
-        label 'pod-agent'
-        yaml '''
-kind: Pod
-spec:
-  containers:
-  - name: jnlp
-    image: jenkins/jnlp-slave
-    imagePullPolicy: Always
-    command:
-    - sleep
-    args:
-    - 99d
-
-'''
-   }
+   agent {
+     kubernetes {
+     //cloud 'kubernetes'
+     label 'kube-agent'
+     }
   }
 
   stages {
