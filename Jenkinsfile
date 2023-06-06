@@ -1,13 +1,23 @@
 //@Library('python_project_library') _
 
 pipeline {
-  agent {
+ agent {
     kubernetes {
-      // Use the default namespace to run the pods
-     // defaultNamespace 'default'
-      // Use a Pod template for the agent
-      yamlFile 'resources/agents/jnlp.yaml'
-    }
+        defaultContainer 'jnlp'
+        yaml '''
+kind: Pod
+spec:
+  containers:
+  - name: jnlp
+    image: jenkins/jnlp-slave
+    imagePullPolicy: Always
+    command:
+    - sleep
+    args:
+    - 99d
+
+'''
+   }
   }
 
   stages {

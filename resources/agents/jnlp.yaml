@@ -6,7 +6,7 @@ metadata:
 spec:
   containers:
   - name: jnlp
-    image: jenkins/inbound-agent:latest
+    image: jenkins/jnlp-slave
     args: ['\$(JENKINS_SECRET)', '\$(JENKINS_NAME)']
     ports:
     - containerPort: 5000
