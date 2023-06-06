@@ -24,14 +24,14 @@ spec:
     stage('Build') {
       steps {
         // Build and test your application here
-        sh echo "hei"
+        sh 'echo "hei"'
       }
     }
 
     stage('Deploy') {
       steps {
         // Deploy your application to Kubernetes here
-        sh echo "hei there"
+        sh 'echo "hei there"'
       }
     }
   }
