@@ -3,8 +3,7 @@
 pipeline {
     agent {
         kubernetes {
-           # label "kubeagent"
-           # defaultContainer "jnlp"
+
             yaml libraryResource("resource/agents/jnlp.yaml")
         }
     }
